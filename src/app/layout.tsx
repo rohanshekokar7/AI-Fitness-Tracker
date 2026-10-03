@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import BottomNav from "@/components/layout/BottomNav";
+import Sidebar from "@/components/layout/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,10 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} min-h-screen bg-background pb-24 md:pb-0 relative`}>
-        {/* Mobile View Container */}
-        <div className="md:max-w-md md:mx-auto md:min-h-screen md:border-x md:border-border md:shadow-2xl md:relative md:bg-background">
-          <main className="min-h-screen w-full">
+      <body className={`${inter.className} min-h-screen bg-background pb-24 md:pb-0 relative flex`}>
+        <Sidebar />
+        <div className="flex-1 md:ml-64 relative min-h-screen">
+          <main className="w-full max-w-5xl mx-auto">
             {children}
           </main>
           <BottomNav />

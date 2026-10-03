@@ -307,7 +307,7 @@ export default function Onboarding() {
       </div>
 
       {/* Content */}
-      <div className="flex-1 px-6 pb-24 overflow-y-auto no-scrollbar">
+      <div className="flex-1 px-6 pb-24 overflow-y-auto no-scrollbar md:max-w-2xl md:mx-auto w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={step}
@@ -322,7 +322,7 @@ export default function Onboarding() {
       </div>
 
       {/* Bottom Action */}
-      <div className="fixed bottom-0 w-full p-6 bg-gradient-to-t from-background via-background to-transparent md:max-w-md">
+      <div className="fixed bottom-0 w-full p-6 bg-gradient-to-t from-background via-background to-transparent md:max-w-2xl md:left-1/2 md:-translate-x-1/2">
         <button
           onClick={nextStep}
           className="w-full bg-primary text-primary-foreground font-semibold py-4 rounded-2xl shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all active:scale-[0.98] flex items-center justify-center"

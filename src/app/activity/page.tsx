@@ -44,7 +44,7 @@ export default function ActivityPage() {
       </Card>
 
       {/* Activity Stats */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         <StatCard icon={Map} label="Distance" value="5.2" unit="km" color="text-blue-500" bg="bg-blue-500/10" />
         <StatCard icon={Flame} label="Calories" value="320" unit="kcal" color="text-orange-500" bg="bg-orange-500/10" />
         <StatCard icon={Timer} label="Active" value="45" unit="min" color="text-purple-500" bg="bg-purple-500/10" />

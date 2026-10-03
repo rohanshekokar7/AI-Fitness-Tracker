@@ -118,7 +118,7 @@ export default function NutritionPage() {
           </button>
         </div>
         
-        <div className="space-y-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {MEALS.map((meal) => (
             <Card key={meal.id} className="overflow-hidden hover:border-primary/50 transition-colors cursor-pointer">
               <CardContent className="p-4 flex items-center justify-between">

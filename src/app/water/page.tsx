@@ -53,7 +53,7 @@ export default function WaterPage() {
         {/* Quick Add Buttons */}
         <section>
           <h3 className="font-semibold mb-4 text-center">Quick Add</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <AddWaterButton amount={0.25} label="250 ml" onClick={() => addWater(0.25)} />
             <AddWaterButton amount={0.5} label="500 ml" onClick={() => addWater(0.5)} />
             <AddWaterButton amount={0.75} label="750 ml" onClick={() => addWater(0.75)} />

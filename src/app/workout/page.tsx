@@ -57,7 +57,7 @@ export default function WorkoutPage() {
         <div className="flex justify-between items-center mb-3">
           <h3 className="font-semibold">Categories</h3>
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           <CategoryCard title="Strength" count={12} color="bg-orange-500" />
           <CategoryCard title="Cardio" count={8} color="bg-blue-500" />
           <CategoryCard title="HIIT" count={5} color="bg-purple-500" />

@@ -33,8 +33,8 @@ export default function Home() {
       </header>
 
       {/* Daily Score & AI Insight */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Card className="bg-gradient-to-br from-primary/10 to-transparent border-primary/20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Card className="bg-gradient-to-br from-primary/10 to-transparent border-primary/20 lg:col-span-1">
           <CardContent className="p-6 flex items-center justify-between">
             <div>
               <h3 className="font-semibold text-lg mb-1">Daily Score</h3>
@@ -52,7 +52,7 @@ export default function Home() {
         </Card>
 
         {/* AI Insight */}
-        <Card>
+        <Card className="lg:col-span-2">
           <CardContent className="p-4 flex gap-4 items-start h-full">
             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-1">
               <SparklesIcon className="w-5 h-5 text-primary" />
@@ -74,7 +74,7 @@ export default function Home() {
         <div className="flex justify-between items-center mb-3">
           <h3 className="font-semibold">Quick Actions</h3>
         </div>
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           <QuickAction icon={Camera} label="Scan Food" href="/scan" color="bg-orange-500" />
           <QuickAction icon={Plus} label="Log Food" href="/log" color="bg-blue-500" />
           <QuickAction icon={Dumbbell} label="Workout" href="/workout" color="bg-purple-500" />
@@ -87,7 +87,7 @@ export default function Home() {
         <div className="flex justify-between items-center mb-3">
           <h3 className="font-semibold">Today's Progress</h3>
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3">
           <MetricCard 
             title="Calories" 
             current={metrics.calories.current} 

@@ -64,11 +64,11 @@ export function AICoach({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
             className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
           />
           <motion.div 
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "100%" }}
+            initial={{ y: "100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "100%", opacity: 0 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed bottom-0 left-0 right-0 h-[85vh] bg-background md:max-w-md md:mx-auto rounded-t-3xl shadow-2xl z-[101] flex flex-col border-t border-border overflow-hidden"
+            className="fixed bottom-0 left-0 right-0 md:left-auto md:right-8 md:bottom-28 h-[85vh] md:h-[600px] md:w-[400px] bg-background md:rounded-3xl rounded-t-3xl shadow-2xl z-[101] flex flex-col border md:border border-border overflow-hidden"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-border bg-card/50">

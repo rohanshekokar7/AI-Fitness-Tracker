@@ -26,9 +26,9 @@ export default function BottomNav() {
 
   return (
     <>
-      {/* Floating AI Coach Button */}
+      {/* Floating AI Coach Button - Mobile Only */}
       <button 
-        className="fixed bottom-24 right-4 md:right-8 bg-primary text-primary-foreground p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50 flex items-center justify-center animate-bounce-slow"
+        className="md:hidden fixed bottom-24 right-4 bg-primary text-primary-foreground p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50 flex items-center justify-center animate-bounce-slow"
         onClick={() => setIsAICoachOpen(true)}
       >
         <Sparkles className="w-6 h-6" />
@@ -37,8 +37,8 @@ export default function BottomNav() {
       {/* AI Coach Modal */}
       <AICoach isOpen={isAICoachOpen} onClose={() => setIsAICoachOpen(false)} />
 
-      {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 w-full bg-card/80 backdrop-blur-lg border-t border-border z-40 pb-safe">
+      {/* Bottom Navigation - Mobile Only */}
+      <nav className="md:hidden fixed bottom-0 w-full bg-card/80 backdrop-blur-lg border-t border-border z-40 pb-safe">
         <div className="flex justify-around items-center h-20 max-w-md mx-auto px-2">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
