@@ -1,7 +1,8 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/Card";
-import { Settings, User as UserIcon, Bell, Shield, Smartphone, LogOut, ChevronRight } from "lucide-react";
+import { Settings, User as UserIcon, Bell, Shield, Smartphone, LogOut, ChevronRight, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export default function ProfilePage() {
   return (
@@ -34,6 +35,15 @@ export default function ProfilePage() {
       </div>
 
       {/* Settings Sections */}
+      <section className="space-y-4">
+        <h3 className="font-semibold px-2 text-muted-foreground uppercase tracking-wider text-xs">Preferences</h3>
+        <Card>
+          <CardContent className="p-0 divide-y divide-border">
+            <ThemeToggleRow />
+          </CardContent>
+        </Card>
+      </section>
+
       <section className="space-y-4">
         <h3 className="font-semibold px-2 text-muted-foreground uppercase tracking-wider text-xs">Account</h3>
         <Card>
@@ -87,5 +97,33 @@ function SettingsRow({ icon: Icon, label, color, bg }: any) {
       </div>
       <ChevronRight className="w-5 h-5 text-muted-foreground" />
     </button>
+  );
+}
+
+function ThemeToggleRow() {
+  const { theme, setTheme } = useTheme();
+  
+  return (
+    <div className="w-full flex items-center justify-between p-4 hover:bg-secondary/50 transition-colors cursor-pointer"
+         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+      <div className="flex items-center space-x-3">
+        <div className={`w-8 h-8 rounded-lg bg-yellow-500/10 flex items-center justify-center`}>
+          {theme === 'dark' ? (
+            <Moon className="w-4 h-4 text-yellow-500" />
+          ) : (
+            <Sun className="w-4 h-4 text-yellow-500" />
+          )}
+        </div>
+        <span className="font-medium">Dark Mode</span>
+      </div>
+      <div className="relative inline-flex h-6 w-11 items-center rounded-full bg-secondary transition-colors"
+           style={{ backgroundColor: theme === 'dark' ? 'hsl(var(--primary))' : '' }}>
+        <span
+          className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+            theme === 'dark' ? 'translate-x-6' : 'translate-x-1'
+          }`}
+        />
+      </div>
+    </div>
   );
 }

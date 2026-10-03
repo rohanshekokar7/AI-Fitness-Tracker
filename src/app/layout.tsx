@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import BottomNav from "@/components/layout/BottomNav";
 import Sidebar from "@/components/layout/Sidebar";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,15 +34,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen bg-background pb-24 md:pb-0 relative flex`}>
-        <Sidebar />
-        <div className="flex-1 md:ml-64 relative min-h-screen">
-          <main className="w-full max-w-5xl mx-auto">
-            {children}
-          </main>
-          <BottomNav />
-        </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Sidebar />
+          <div className="flex-1 md:ml-64 relative min-h-screen">
+            <main className="w-full max-w-5xl mx-auto">
+              {children}
+            </main>
+            <BottomNav />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
