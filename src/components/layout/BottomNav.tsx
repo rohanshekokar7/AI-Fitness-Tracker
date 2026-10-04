@@ -20,7 +20,11 @@ export default function BottomNav() {
   const [isAICoachOpen, setIsAICoachOpen] = useState(false);
   
   // Don't show bottom nav on onboarding
-  if (pathname.startsWith('/onboarding')) {
+  if (
+    pathname.startsWith('/onboarding') || 
+    pathname.startsWith('/login') || 
+    pathname.startsWith('/signup')
+  ) {
     return null;
   }
 

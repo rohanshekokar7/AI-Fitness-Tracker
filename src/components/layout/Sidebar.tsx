@@ -19,7 +19,11 @@ export default function Sidebar() {
   const pathname = usePathname();
   const [isAICoachOpen, setIsAICoachOpen] = useState(false);
   
-  if (pathname.startsWith('/onboarding')) {
+  if (
+    pathname.startsWith('/onboarding') || 
+    pathname.startsWith('/login') || 
+    pathname.startsWith('/signup')
+  ) {
     return null;
   }
 
