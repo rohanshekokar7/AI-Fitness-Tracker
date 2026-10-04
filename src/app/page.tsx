@@ -28,7 +28,7 @@ export default function Home() {
           <h1 className="text-2xl font-bold">{user.name}</h1>
         </div>
         <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center overflow-hidden border border-border">
-          <UserIcon />
+          <ProfileAvatarIcon />
         </div>
       </header>
 
@@ -175,7 +175,7 @@ function QuickAction({ icon: Icon, label, href, color }: any) {
   );
 }
 
-function UserIcon() {
+function ProfileAvatarIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted-foreground">
       <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
